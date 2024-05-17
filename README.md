@@ -15,18 +15,26 @@ The project consists of two main files: `src/frame.tsx` and `src/webhook.ts`. Th
 * Register your application in the Auth system: **TBD**
 
 ```shell
+# Install dependencies with NPM >= 18
+npm ci
+
 # Copy configuration file for the frame, fill the data
 cp example.wrangler-frame.toml wrangler-frame.toml
 
 # Copy configuration file for the webhook, fill the data
 cp example.wrangler-webhook.toml wrangler-webhook.toml
 
+# Create a KV in Cloudflare for storing user data. Copy the IDs from the two KVs into `wrangler-frame.toml` and `wrangler-webhook.toml`.
+npm run wrangler:create-namespaces
+
 # Deploy scripts to Cloudflare
 npm run wrangler:deploy-all
+```
 
+```shell
 # Or deploy just the webhook
 npm run wrangler:deploy-webhook
 
-Or deploy just the Frame
+# Or deploy just the Frame
 npm run wrangler:deploy-frame
 ```
