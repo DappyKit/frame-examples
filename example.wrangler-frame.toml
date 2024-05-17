@@ -12,4 +12,4 @@ kv_namespaces = [
     { binding = "dappy_main_to_delegated", id = "FILL_WITH_YOUR_VALUE" },
     { binding = "dappy_delegated_to_pk", id = "FILL_WITH_YOUR_VALUE" }
 ]
-vars = { APP_TITLE="DappyKit Demo", APP_OWNER_FID=FILL_WITH_YOUR_VALUE, APP_AUTH_URL = "https://warpcast.com/web3igor/0xd50ba44c", PAGE_REDIRECT_URL="https://dappykit.org", APP_ADDRESS = "FILL_WITH_YOUR_VALUE", APP_PK = "FILL_WITH_YOUR_VALUE" }
+vars = { APP_TITLE="DappyKit Demo", APP_OWNER_FID=FILL_WITH_YOUR_VALUE, APP_AUTH_URL = "https://warpcast.com/dappykit/0x99d0c314", PAGE_REDIRECT_URL="https://dappykit.org", APP_ADDRESS = "FILL_WITH_YOUR_VALUE", APP_PK = "FILL_WITH_YOUR_VALUE" }
