@@ -4,16 +4,22 @@
   "type": "module",
   "scripts": {
     "dev": "frog dev",
-    "wrangler:dev": "wrangler dev src/index.tsx",
-    "wrangler:deploy": "wrangler deploy --minify src/index.tsx",
-    "wrangler:static": "cp -r ./node_modules/frog/_lib/ui/.frog ./public/frog"
+    "wrangler:dev": "wrangler dev src/frame.tsx",
+    "wrangler:deploy-frame": "npm run replace-wordlists && wrangler deploy --minify src/frame.tsx --config wrangler-frame.toml --env production",
+    "wrangler:deploy-webhook": "wrangler deploy --minify src/webhook.ts --config wrangler-webhook.toml --env production",
+    "wrangler:deploy-all": "npm run wrangler:deploy-frame && npm run wrangler:deploy-webhook",
+    "wrangler:static": "cp -r ./node_modules/frog/_lib/ui/.frog ./public/frog",
+    "cf-typegen": "wrangler types --config wrangler-frame.toml",
+    "replace-wordlists": "cp node_modules/@dappykit/sdk/dist/emptyModule.js node_modules/@scure/bip39/esm/wordlists/czech.js && cp node_modules/@dappykit/sdk/dist/emptyModule.js node_modules/@scure/bip39/esm/wordlists/korean.js && cp node_modules/@dappykit/sdk/dist/emptyModule.js node_modules/@scure/bip39/esm/wordlists/french.js && cp node_modules/@dappykit/sdk/dist/emptyModule.js node_modules/@scure/bip39/esm/wordlists/italian.js && cp node_modules/@dappykit/sdk/dist/emptyModule.js node_modules/@scure/bip39/esm/wordlists/japanese.js && cp node_modules/@dappykit/sdk/dist/emptyModule.js node_modules/@scure/bip39/esm/wordlists/spanish.js"
   },
   "dependencies": {
-    "frog": "latest",
+    "@dappykit/sdk": "^2.6.0",
+    "frog": "^0.9.3",
     "hono": "^4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "latest",
-    "wrangler": "^3.53.0"
+    "@cloudflare/workers-types": "^4.20240502.0",
+    "typescript": "^5.4.5",
+    "wrangler": "^3.55.0"
   }
 }

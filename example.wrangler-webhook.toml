@@ -1,0 +1,15 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "dappykit-webhook-template"
+compatibility_date = "2024-05-02"
+node_compat = true
+main = "src/webhook.ts"
+
+[site]
+bucket = "./public"
+
+[env.production]
+kv_namespaces = [
+    { binding = "dappy_main_to_delegated", id = "FILL_WITH_YOUR_VALUE" },
+    { binding = "dappy_delegated_to_pk", id = "FILL_WITH_YOUR_VALUE" }
+]
+vars = { APP_ADDRESS = "FILL_WITH_YOUR_VALUE", AUTH_SERVICE_ADDRESS = "0x5c15F64324206854eFEFabcee15f79e9F4bec590" }

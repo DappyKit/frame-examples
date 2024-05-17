@@ -1,0 +1,15 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "dappykit-frame-template"
+compatibility_date = "2024-05-02"
+node_compat = true
+main = "src/frame.tsx"
+
+[site]
+bucket = "./public"
+
+[env.production]
+kv_namespaces = [
+    { binding = "dappy_main_to_delegated", id = "FILL_WITH_YOUR_VALUE" },
+    { binding = "dappy_delegated_to_pk", id = "FILL_WITH_YOUR_VALUE" }
+]
+vars = { APP_TITLE="DappyKit Demo", APP_OWNER_FID=FILL_WITH_YOUR_VALUE, APP_AUTH_URL = "https://warpcast.com/web3igor/0xd50ba44c", PAGE_REDIRECT_URL="https://dappykit.org", APP_ADDRESS = "FILL_WITH_YOUR_VALUE", APP_PK = "FILL_WITH_YOUR_VALUE" }

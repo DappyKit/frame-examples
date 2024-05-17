@@ -23,3 +23,6 @@ yarn-error.log*
 # frog static assets
 public/frog
 .idea
+.env
+wrangler-frame.toml
+wrangler-webhook.toml
