@@ -10,11 +10,15 @@ The project consists of two main files: `src/frame.tsx` and `src/webhook.ts`. Th
 
 ## Installation
 
-* Install Node.js 18+.
+* Install Node.js 18+ and npm.
+* Install Git.
 * Create a Cloudflare account for deploying Frame and Webhook.
-* Register your application in the Auth system: **TBD**
+* Create ETH address/private key. Using Metamask or other wallets/services.
 
 ```shell
+# Clone the repo
+git clone https://github.com/DappyKit/frame-examples.git
+
 # Install dependencies with NPM >= 18
 npm ci
 
@@ -29,7 +33,13 @@ npm run wrangler:create-namespaces
 
 # Deploy scripts to Cloudflare
 npm run wrangler:deploy-all
+
+# The first published link is the Frame, which you can publish in your Farcaster. 
+# The second published link is the Webhook for receiving data about granted permissions.
+# Using these links, you can register your application in the Auth system.
 ```
+
+One by one deployment.
 
 ```shell
 # Or deploy just the webhook
@@ -38,3 +48,10 @@ npm run wrangler:deploy-webhook
 # Or deploy just the Frame
 npm run wrangler:deploy-frame
 ```
+
+## Application registration
+
+After successfully publishing your Frame, it must be registered in the Auth system.
+To do this, go to the link [**TBD**] and enter all the necessary information. Upon successful registration, you can publish your Frame on your own or any other Farcaster page.
+
+Each new user will go through a quick authorization without leaving Farcaster.
